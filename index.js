@@ -169,6 +169,7 @@ app.post('/shopkeeper-update', upload.single('image'), function (req, res, next)
   // req.body will hold the text fields, if there were any
   console.log(req.body);
   const updateArray = req.body;
+  updateArray.itemPrice = "₹"+updateArray.itemPrice
 
   async function insertDocuments(updateArray) {
       const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -250,7 +251,9 @@ app.post("/button-clicked", (req, res) => {
   try {
     await client.connect();
     const collection = client.db("ShoppingApp").collection("CustomerDetails");
+    const collectionToDelete = client.db("ShoppingApp").collection("orderList");
     await collection.insertOne(newData); // Insert data into MongoDB
+    await collectionToDelete.deleteMany({});
     // res.redirect("/checkout"); // Redirect to app.get("/123")
   } finally {
     await client.close();
