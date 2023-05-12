@@ -34,33 +34,40 @@ var albums ="";
 // Features for Sale
 const allFeatureElements = fs.readdirSync("./public/img/features");
 console.log(allFeatureElements);
+const feature_description = fs.readFileSync("./public/img/feature-description.json");
+const feaes = JSON.parse(feature_description);
+const feaes_value = Object.values(feaes);
+const feaes_keys = Object.keys(feaes);
+console.log(feaes_value,feaes_keys);
+var i =0;
 allFeatureElements.forEach((item)=>{
 	
     features+=`<div class="col d-flex align-items-start">
-        <img src="./img/features/${item}" alt="features">
+        <img src="/img/features/${item}" alt="features">
         <div>
-          <h3 class="fw-bold mb-0 fs-4">Featured title</h3>
-          <p>Paragraph of text beneath the heading to explain the heading.</p>
+          <h3 class="fw-bold mb-0 fs-4">${feaes_keys[i].toUpperCase()}</h3>
+          <p>${feaes_value[i]}</p>
         </div>
     </div>`;
-        
+    i++;    
     });
     
     //Album for Sale
 
-const allAlbumElements = fs.readdirSync("./public/img/albumForSale");
+const allAlbumElements = fs.readdirSync("./public/uploads");
+console.log(allAlbumElements);
 allAlbumElements.forEach((item)=>{
  albums+=`<div class="col">
  <div class="card shadow-sm">
-   <img src="./img/albumForSale/${item}" alt="item">
+   <img src="/uploads/${item}" alt="item">
    <div class="card-body">
-     <p class="card-text">This is a broader card with supporting text below as a natural introduction to additional content. This content is a little longer.</p>
+     <p class="card-text">Go to Shop Section to Order Now!</p>
      <div class="d-flex justify-content-between align-items-center">
        <div class="btn-group">
-         <button type="button" class="btn btn-sm btn-outline-secondary" style="direction: ltr;">width</button>
-         <button type="button" class="btn btn-sm btn-outline-secondary" style="direction: ltr;">modulation</button>
+         <button type="button" class="btn btn-sm btn-outline-secondary" style="direction: ltr;">Fresh</button>
+         <button type="button" class="btn btn-sm btn-outline-secondary" style="direction: ltr;">Trending</button>
        </div>
-       <button type="button" class="btn btn-sm btn-outline-warning">Shop nOW</button>
+       <button type="button" class="btn btn-sm btn-outline-warning" ><a style="text-decoration:none" href="/shophere">Shop Now</a></button>
      </div>
    </div>
  </div>
