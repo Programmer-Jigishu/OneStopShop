@@ -218,12 +218,9 @@ app.post("/button-clicked", (req, res) => {
         await client.connect();
         const database = client.db("ShoppingApp");
         const collection = database.collection("orderList");
-        const documents = await collection.findOne({});
-        
-
-        
-
-        return documents;
+        console.log("Connected To Database")
+        const documents = await collection.findOne({});     
+         return documents;
     
       }finally {
 
