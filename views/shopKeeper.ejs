@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- default -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta
+        name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Icons -->
+        <link rel="icon" href="./img/favicon.ico">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+        <!-- CSS-JS -->
+
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <title>OneStopShop</title>
+    </head>
+
+    <!-- CSS -->
+    <style>
+
+        body {
+            background-color: #E5F9DB;
+        }
+
+        h1 {
+            color: #006B38;
+            font-family: 'League Spartan', sans-serif;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            border: 2px solid #006B38;
+            border-radius: 4px;
+            margin-right: 10px;
+            padding: 5px;
+            width: 200px;
+        }
+
+        button {
+            background-color: #006B38;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+            padding: 10px 20px;
+        }
+
+        button:hover {
+            background-color: #00512D;
+        }
+
+        span {
+            margin: 1rem;
+            padding: 0.5rem;
+            text-align: center;
+            text-decoration: solid;
+        }
+
+    </style>
+
+    <body>
+        <h1>Current Inventory</h1>
+        <%-allFeatures%>
+
+        <h1>Add new Products</h1>
+
+
+        <form action="/shopkeeper-update" enctype="multipart/form-data" method="post">
+
+            <input type="text" name="itemName" id="itemName" placeholder="Item" class="col">
+            <input type="number" name="itemQuantity" id="itemQuantity" placeholder="Quantity" class="col">
+            <input type="number" name="itemPrice" id="itemPrice" placeholder="Price" class="col">
+            <textarea id="description" name="description" placeholder="Add product description"></textarea><br><br>
+            <input type="file" id="image" name="image" placeholder="Insert Image"><br><br>
+            
+            <button type="submit" id="postData">Submit</button>
+
+        </form>
+
+<script>
+
+    document.getElementById("postData").onclick = ()=>{
+        alert("Adding to DataBase on Server");
+        setTimeout(
+            ()=>{
+            alert("Successfully added item in Database");
+            location.reload();
+            return false;
+            }
+        ,3000);
+
+     
+    }
+</script>        
+
+
+
+        
+    </body>
+</html>

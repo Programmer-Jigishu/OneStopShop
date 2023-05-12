@@ -1,0 +1,99 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+body{
+    width: 100%;
+    background-color: #A2A378;
+}
+
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+h2{
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+
+h4{
+    font-size: 20px;
+    /* line-height: 64px; */
+    color: #222;
+}
+
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+/* Header and NavBar======================================= */
+#logo{
+    height: 5rem;
+    left:3rem;
+    box-shadow: 0 0 2rem #A0D8B3;
+}
+
+header{
+    margin-top: 10px;
+    
+    padding: 15px 10px;
+    background-color: #E5F9DB;
+    box-shadow: 0 0 15px #A0D8B3;
+
+    position:sticky;
+    top: 0;
+    left: 0;
+}
+#mynavbar{
+    padding-left: 3rem;
+    justify-content: space-between;
+}
+
+#mynavbar div{
+    padding: 0 1rem;
+    align-items: center;
+    justify-content: center;
+}
+#mynavbar div li{
+ padding: 0 1rem;
+}
+
+.carousel{
+box-shadow: 0 0 2rem #A0D8B3;
+}
+.carousel-inner{
+    height: 80vh;
+}
+.carousel-item img{
+    height: 80vh;
+    
+}
+/* ======= */
+
+#navbar li a:hover,
+#navbar li a.active{
+    /* text-decoration: underline; */
+    color:#088178;
+}
+#navbar li a:hover::after,
+#navbar li a.active::after{
+    content: "";
+    width: 35%;
+    height: 2px;
+    background-color: #088178;
+    position: absolute;
+    top:22px;
+    left:20px;
+    
+}
